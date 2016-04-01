@@ -1,13 +1,13 @@
 var http=require('http');
 http.createServer(function(request,response){
-    // ·¢ËÍ HTTP Í·²¿
-    // HTTP ×´Ì¬Öµ: 200 : OK
-    // ÄÚÈİÀàĞÍ: text/plain
+    // å‘é€ HTTP å¤´éƒ¨
+    // HTTP çŠ¶æ€å€¼: 200 : OK
+    // å†…å®¹ç±»å‹: text/plain
     response.setHeader('contentType','text/html');
     response.writeHead(200,{'contentType':'text/plain','test':'12344'});
     response.end('Hello World!\n');
 }).listen(8124);
 console.log('Server running at http://127.0.0.1:8124/');
 
-/*setHeaderºÍwriteHead¶¼ÊÇÉèÖÃÏìÓ¦Í·,²»¹ıÈôÓĞÏàÍ¬ÊôĞÔsetHeader»á±»¸²¸Ç.text/plainÊ±,×ÖÌåÑÕÉ«»á±»ºöÂÔ.
-* */
+/*setHeaderå’ŒwriteHeadéƒ½æ˜¯è®¾ç½®å“åº”å¤´,ä¸è¿‡è‹¥æœ‰ç›¸åŒå±æ€§setHeaderä¼šè¢«è¦†ç›–.text/plainæ—¶,å­—ä½“é¢œè‰²ä¼šè¢«å¿½ç•¥.
+ * */

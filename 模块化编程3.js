@@ -1,21 +1,21 @@
 /**
  * Created by cljin on 2016/3/28.
  */
-/*²úÉú»·¾³:1>¼ÓÔØ¶à¸öÎÄ¼şµÄÊ±ºò:ä¯ÀÀÆ÷Í£Ö¹ÍøÒ³äÖÈ¾,ÍøÒ³Ê§È¥ÏìÓ¦;2>ÔÚjsÎÄ¼ş´æÔÚÒÀÀµµÄÊ±ºò,±ØĞë±£Ö¤¼ÓÔØË³Ğò
-* require.jsµ®Éú:1>ÊµÏÖjsÒì²½¼ÓÔØ,±ÜÃâÍøÒ³Ê§È¥ÏìÓ¦.2>¹ÜÀíÄ£¿éÖ®¼äµÄÒÀÀµĞÔ,±ãÓÚ´úÂëµÄ±àĞ´ºÍÎ¬»¤
-*asyncÊôĞÔ±íÊ¾Òì²½¼ÓÔØ,IE²»Ö§³Ö,Ö»Ö§³Ödefer
-* // eg: <script src="js/require.js" defer async='true'></script>
-*
-*data-mainÊôĞÔµÄ×÷ÓÃÊÇ£¬Ö¸¶¨ÍøÒ³³ÌĞòµÄÖ÷Ä£¿é.ºó×ºjsÊ¡ÂÔ
-* // eg:<script src="js/require.js" data-main="js/main"></script>
-*
-* */
+/*äº§ç”Ÿç¯å¢ƒ:1>åŠ è½½å¤šä¸ªæ–‡ä»¶çš„æ—¶å€™:æµè§ˆå™¨åœæ­¢ç½‘é¡µæ¸²æŸ“,ç½‘é¡µå¤±å»å“åº”;2>åœ¨jsæ–‡ä»¶å­˜åœ¨ä¾èµ–çš„æ—¶å€™,å¿…é¡»ä¿è¯åŠ è½½é¡ºåº
+ * require.jsè¯ç”Ÿ:1>å®ç°jså¼‚æ­¥åŠ è½½,é¿å…ç½‘é¡µå¤±å»å“åº”.2>ç®¡ç†æ¨¡å—ä¹‹é—´çš„ä¾èµ–æ€§,ä¾¿äºä»£ç çš„ç¼–å†™å’Œç»´æŠ¤
+ *asyncå±æ€§è¡¨ç¤ºå¼‚æ­¥åŠ è½½,IEä¸æ”¯æŒ,åªæ”¯æŒdefer
+ * // eg: <script src="js/require.js" defer async='true'></script>
+ *
+ *data-mainå±æ€§çš„ä½œç”¨æ˜¯ï¼ŒæŒ‡å®šç½‘é¡µç¨‹åºçš„ä¸»æ¨¡å—.åç¼€jsçœç•¥
+ * // eg:<script src="js/require.js" data-main="js/main"></script>
+ *
+ * */
 // main.js
 require(['moduleA', 'moduleB', 'moduleC'], function (moduleA, moduleB, moduleC){
     // some code here
 });
-/*ÒÔÉÏ±íÊ¾Ä£¿émainÒÀÀµmoduleA, moduleB, moduleC*/
-/*ÒÔÏÂÎªÅäÖÃ*/
+/*ä»¥ä¸Šè¡¨ç¤ºæ¨¡å—mainä¾èµ–moduleA, moduleB, moduleC*/
+/*ä»¥ä¸‹ä¸ºé…ç½®*/
 
 require.config({
     paths: {
@@ -24,7 +24,7 @@ require.config({
         "backbone": "backbone.min"
     }
 });
-//Èô²»ÔÚÍ¬Ò»Â·¾¶ÏÂÃæ,Ò»ÖÖ·½Ê½¼ÓÉÏ"jquery": "lib/jquery.min",ÁíÒ»ÖÖÊ¹ÓÃbaseUrl¸Ä±ä»ùÄ¿Â¼
+//è‹¥ä¸åœ¨åŒä¸€è·¯å¾„ä¸‹é¢,ä¸€ç§æ–¹å¼åŠ ä¸Š"jquery": "lib/jquery.min",å¦ä¸€ç§ä½¿ç”¨baseUrlæ”¹å˜åŸºç›®å½•
 require.config({
     baseUrl:'js/lib',
     paths: {
@@ -34,9 +34,9 @@ require.config({
     }
 });
 
-/**¼ÓÔØAMDÄ£¿éĞ´·¨
+/**åŠ è½½AMDæ¨¡å—å†™æ³•
  * */
-//¶¨ÒåÄ£¿é
+//å®šä¹‰æ¨¡å—
 // math.js
 define(function (){
     var add = function (x,y){
@@ -46,7 +46,7 @@ define(function (){
         add: add
     };
 });
-/*µ±math.js»¹ÒÀÀµÆäËûÄ£¿éµÄÊ±ºò,µÚÒ»¸ö²ÎÊıÒÔÊı×éµÄĞÎÊ½µ¼Èë*/
+/*å½“math.jsè¿˜ä¾èµ–å…¶ä»–æ¨¡å—çš„æ—¶å€™,ç¬¬ä¸€ä¸ªå‚æ•°ä»¥æ•°ç»„çš„å½¢å¼å¯¼å…¥*/
 define(['myLib'], function(myLib){
     function foo(){
         myLib.doSomething();
@@ -57,7 +57,7 @@ define(['myLib'], function(myLib){
 });
 
 
-//¼ÓÔØ·½·¨
+//åŠ è½½æ–¹æ³•
 // main.js
 require(['math'], function (math){
     alert(math.add(1,1));
@@ -65,11 +65,11 @@ require(['math'], function (math){
 
 
 
-/* ·Ç¹æ·¶Ä£¿éĞ´·¨:ÔÚÊ¹ÓÃrequire¼ÓÔØÖ®Ç°Ê¹ÓÃconfig·½·¨,¶¨ÒåÌØĞÔ
-* shimÊôĞÔ,×¨ÃÅÅäÖÃ²»¼æÈİµÄÄ£¿é.
-* £¨1£©exportsÖµ£¨Êä³öµÄ±äÁ¿Ãû£©£¬±íÃ÷Õâ¸öÄ£¿éÍâ²¿µ÷ÓÃÊ±µÄÃû³Æ£»
-* £¨2£©depsÊı×é£¬±íÃ÷¸ÃÄ£¿éµÄÒÀÀµĞÔ¡£
-* */
+/* éè§„èŒƒæ¨¡å—å†™æ³•:åœ¨ä½¿ç”¨requireåŠ è½½ä¹‹å‰ä½¿ç”¨configæ–¹æ³•,å®šä¹‰ç‰¹æ€§
+ * shimå±æ€§,ä¸“é—¨é…ç½®ä¸å…¼å®¹çš„æ¨¡å—.
+ * ï¼ˆ1ï¼‰exportså€¼ï¼ˆè¾“å‡ºçš„å˜é‡åï¼‰ï¼Œè¡¨æ˜è¿™ä¸ªæ¨¡å—å¤–éƒ¨è°ƒç”¨æ—¶çš„åç§°ï¼›
+ * ï¼ˆ2ï¼‰depsæ•°ç»„ï¼Œè¡¨æ˜è¯¥æ¨¡å—çš„ä¾èµ–æ€§ã€‚
+ * */
 require.config({
     shim: {
         'underscore':{
