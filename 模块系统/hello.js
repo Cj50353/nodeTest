@@ -12,7 +12,9 @@ function hello () {
 module.exports = hello;
 
 
+/*
 exports.hello = function () {
     console.log ( 'hello' );
 };
+*/
 

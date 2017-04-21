@@ -13,3 +13,4 @@ var hello=require('./hello');
 hello.sayHello();*/
 
 console.log(hello.toString());
+hello.hello()
